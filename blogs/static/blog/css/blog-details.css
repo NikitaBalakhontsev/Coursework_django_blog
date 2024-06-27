@@ -1,0 +1,61 @@
+.article-detail {
+    max-width: 800px;
+    margin: 2% auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-detail h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.article-detail .field {
+    margin-bottom: 10px;
+}
+
+.article-detail .field:last-child {
+    margin-bottom: 0; /* Убираем отступ снизу для последнего элемента */
+}
+
+.article-detail .label {
+    font-weight: bold;
+}
+
+.article-detail .logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.button-row {
+    margin-top: 20px;
+}
+
+.back-link,
+.article-link {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px; /* Расстояние между кнопками */
+}
+
+
+
+
+.back-link button, .article-link button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-link button:hover, .article-link button:hover {
+   background-color: #58abe1;
+}

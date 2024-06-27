@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-label {
+            font-weight: bold;
+            display: block; /* Разделять подпись и поле ввода на новой строке */
+            margin-bottom: 5px; /* Добавить отступ между подписью и полем ввода */
+        }
+
+        .form-fields {
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .form-error {
+            color: #d9534f;
+        }
+
+        input {
+            width: 60%; /* Занимать всю доступную ширину */
+            box-sizing: border-box; /* Учитывать padding и border в расчетах ширины */
+            margin-bottom: 10px; /* Добавить отступ между полями ввода */
+        }
+
+           button {
+               width: 40%;
+               background-color: #5cb85c;
+               color: #fff;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 3px;
+               cursor: pointer;
+               margin: 0 auto; /* Центрирование кнопки */
+               display: block; /* Сделать кнопку блочным элементом */
+    }
+
+            button:hover {
+                background-color: #4cae4c;
+            }
+    </style>
+</head>
+<body>
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    <div class="form-fields">
+        {% for f in form %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+    </div>
+    <button type="submit">Войти</button>
+</form>
+{% endblock %}
+
+</body>
+</html>

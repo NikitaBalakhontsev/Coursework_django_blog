@@ -1,0 +1,87 @@
+.grid-container {
+    display: grid;
+    margin: 2% 5%;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Равномерно распределяет пространство между дочерними элементами */
+    height: 100%; /* Для занимания всей высоты родителя */
+}
+
+
+.card .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.card .logo {
+    max-width: 100%; /* Make sure the logo does not exceed its container */
+}
+
+
+.card .content {
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%; /* Set the maximum width for the content */
+}
+
+.card img.logo {
+    max-height: 200px; /* Замените 100px на желаемую фиксированную высоту */
+    width: auto;
+    max-width: 100%;
+    object-fit: cover; /* Сохраняет соотношение сторон */
+    margin-bottom: 10px; /* Добавляет отступ снизу */
+}
+
+.card .field {
+    margin-top: auto;
+}
+
+.card .field .label {
+    font-style: italic;
+}
+
+.card .field .content {
+    /* Стили для содержимого, например, обычный текст */
+}
+
+.button-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.favorite-button,
+.read-more-link button {
+    padding: 10px 20px; /* Размер кнопок */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favorite-button {
+    background-color: #3498db; /* Голубой цвет кнопки "Сохранить в избранное" */
+    color: #fff;
+}
+
+.read-more-link button {
+    background-color: #fff; /* Белый цвет кнопки "Читать далее" */
+    color: #3498db; /* Голубой цвет текста кнопки "Читать далее" */
+}
+
+.favorite-button:hover,
+.read-more-link button:hover {
+    background-color: #2980b9; /* Измененный голубой цвет при наведении */
+}

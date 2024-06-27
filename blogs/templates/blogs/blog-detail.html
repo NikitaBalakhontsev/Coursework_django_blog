@@ -1,0 +1,37 @@
+{% extends 'blogs/base.html' %}
+
+
+{% block title %} {{ blog.title }} {% endblock %}
+
+{% block content %}
+    <div class="article-detail">
+        <h1>{{ blog.title }}</h1>
+
+        <p class="field">
+            <span class="label">Автор:</span>
+            <span class="content">{{ blog.author }}</span>
+        </p>
+
+        <p class="field content">{{ blog.content }}</p>
+
+        <p class="field">Источник: {{ blog.source }}</p>
+
+        {% if blog.logo_url %}
+            <img class="logo" src="{{ blog.logo_url }}" alt="Logo">
+        {% endif %}
+
+        <p class="field">Опубликовано: {{ blog.pub_date }}</p>
+
+        <div class="button-row">
+            <a class="back-link" href="{% url 'resources' %}">
+                <button>Вернуться к списку</button>
+            </a>
+
+            <!-- Кнопка "Перейти к оригиналу" -->
+            <a class="article-link" href="{{ blog.post_url }}" target="_blank">
+                <button>Перейти к оригиналу</button>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
